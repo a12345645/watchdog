@@ -1,3 +1,4 @@
+#!/bin/bash
 path=`pwd`
 target=("." ".." "feed_dog.sh" "feed_dog")
 
@@ -29,7 +30,7 @@ if [ -f "/lib/modules/`uname -r`/kernel/drivers/watchdog/sch311x_wdt.ko" ]; then
     modules_path="/lib/modules/\`uname -r\`/kernel/drivers/watchdog/sch311x_wdt.ko"
 else
     modules_path="$path/sch311x_wdt.ko"
-    target += ("sch311x_wdt.ko")
+    target+=("sch311x_wdt.ko")
 fi
 
 echo "lsmod | grep sch311x_wdt
