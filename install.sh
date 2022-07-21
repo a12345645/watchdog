@@ -22,14 +22,14 @@ chmod 644 /etc/systemd/system/watchdog.service
 systemctl daemon-reload
 systemctl enable watchdog.service
 
-make
-
 # create shell
 
 if [ -f "/lib/modules/`uname -r`/kernel/drivers/watchdog/sch311x_wdt.ko" ]; then
     modules_path="/lib/modules/\`uname -r\`/kernel/drivers/watchdog/sch311x_wdt.ko"
+    make feed_dog
 else
     modules_path="$path/sch311x_wdt.ko"
+    make
     target+=("sch311x_wdt.ko")
 fi
 
