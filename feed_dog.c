@@ -21,13 +21,13 @@ struct watchdog_info{
 #define WDIOC_KEEPALIVE _IOR(WATCHDOG_IOCTL_BASE, 5, int)
 
 #define TIMEOUT 20
-#define SLEEP_TIME TIMEOUT * 32
+#define SLEEP_TIME TIMEOUT * 50
 
  //suspend some seconds
 int zsleep(int millisecond)
 {
      unsigned long usec;
-     usec=1000 * millisecond;
+     usec = 1000 * millisecond;
      usleep(usec);
 }
 
@@ -35,7 +35,6 @@ int main(int argc,char **argv)
 {
     int fd, ch;
     int i, j;
-    char c;
     struct watchdog_info wi;
     fd = open("/dev/watchdog", O_RDWR); 
     if(fd < 0) {
@@ -44,19 +43,19 @@ int main(int argc,char **argv)
     }
 
     ioctl(fd, WDIOC_GETSUPPORT, &wi);
-    printf("options : %d, identity : %s\n",wi.options,wi.identity);
+    printf("options : %d, identity : %s\n", wi.options,wi.identity);
 
     i = TIMEOUT;
-    printf("SETTIMEOUT %d\n",ioctl(fd, WDIOC_SETTIMEOUT, &i));
+    printf("SETTIMEOUT %d\n" ,ioctl(fd, WDIOC_SETTIMEOUT, &i));
 
-    printf("GETTIMEOUT %d\n",ioctl(fd, WDIOC_GETTIMEOUT, &i));
+    printf("GETTIMEOUT %d\n", ioctl(fd, WDIOC_GETTIMEOUT, &i));
     printf("%d\n",i); 
 
     i = WDIOS_DISABLECARD;
-    printf("%d\n",ioctl(fd,WDIOC_SETOPTIONS, &i));
+    printf("DISABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     i = WDIOS_ENABLECARD;
-    printf("%d\n",ioctl(fd,WDIOC_SETOPTIONS, &i));
+    printf("ENABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     while(1)
     {
