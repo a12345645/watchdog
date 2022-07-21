@@ -1,3 +1,10 @@
 .vscode/
 watchdog.service
 feed_dog.sh
+*.cmd
+feed_dog
+*.symvers
+*.order
+*.ko
+*.o
+*.mod*
