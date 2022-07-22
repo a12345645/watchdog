@@ -43,10 +43,10 @@ else
     insmod $modules_path
     if [ "\$?" -ne 0 ]
     then
-        NOW=$( date '+%F_%H:%M:%S' )
+        NOW=\$( date '+%F_%H:%M:%S' )
         echo \$NOW load watchdog driver error >> $path/log.txt
     else
-        NOW=$( date '+%F_%H:%M:%S' )
+        NOW=\$( date '+%F_%H:%M:%S' )
         echo \$NOW load watchdog driver successfully >> $path/log.txt
     fi
 fi
