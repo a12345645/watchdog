@@ -1,5 +1,6 @@
 #!/bin/bash
 path=$(cd "$(dirname "$0")"; pwd)
+cd $path
 target=("." ".." "feed_dog.sh" "feed_dog")
 
 # create system service
