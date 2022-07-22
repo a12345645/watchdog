@@ -19,3 +19,4 @@ If the service crash and the watchdog timer count to 0, the system will reboot.<
 ## Reference
 https://www.796t.com/content/1550356580.html<br>
 https://github.com/torvalds/linux/blob/master/drivers/watchdog/sch311x_wdt.c<br>
+http://ww1.microchip.com/downloads/en/DeviceDoc/00001872A.pdf
