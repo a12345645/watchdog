@@ -43,19 +43,19 @@ int main(int argc,char **argv)
     }
 
     ioctl(fd, WDIOC_GETSUPPORT, &wi);
-    printf("options : %d, identity : %s\n", wi.options,wi.identity);
+    // printf("options : %d, identity : %s\n", wi.options,wi.identity);
 
     i = TIMEOUT;
-    printf("SETTIMEOUT %d\n" ,ioctl(fd, WDIOC_SETTIMEOUT, &i));
+    // printf("SETTIMEOUT %d\n" ,ioctl(fd, WDIOC_SETTIMEOUT, &i));
 
-    printf("GETTIMEOUT %d\n", ioctl(fd, WDIOC_GETTIMEOUT, &i));
-    printf("%d\n",i); 
+    // printf("GETTIMEOUT %d\n", ioctl(fd, WDIOC_GETTIMEOUT, &i));
+    // printf("%d\n",i); 
 
     i = WDIOS_DISABLECARD;
-    printf("DISABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
+    // printf("DISABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     i = WDIOS_ENABLECARD;
-    printf("ENABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
+    // printf("ENABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     while(1)
     {
