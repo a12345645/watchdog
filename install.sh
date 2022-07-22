@@ -62,4 +62,4 @@ do
     fi
 done
 
-echo  -e "\033[32m Complete the installation after reboot\033[0m"
+echo  -e "\033[32m Complete the installation after reboot.\033[0m"
