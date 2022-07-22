@@ -46,15 +46,18 @@ int main(int argc,char **argv)
     // printf("options : %d, identity : %s\n", wi.options,wi.identity);
 
     i = TIMEOUT;
+    ioctl(fd, WDIOC_SETTIMEOUT, &i);
     // printf("SETTIMEOUT %d\n" ,ioctl(fd, WDIOC_SETTIMEOUT, &i));
-
+    ioctl(fd, WDIOC_GETTIMEOUT, &i);
     // printf("GETTIMEOUT %d\n", ioctl(fd, WDIOC_GETTIMEOUT, &i));
     // printf("%d\n",i); 
 
     i = WDIOS_DISABLECARD;
+    ioctl(fd, WDIOC_SETOPTIONS, &i);
     // printf("DISABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     i = WDIOS_ENABLECARD;
+    ioctl(fd, WDIOC_SETOPTIONS, &i);
     // printf("ENABLECARD %d\n", ioctl(fd, WDIOC_SETOPTIONS, &i));
 
     while(1)
