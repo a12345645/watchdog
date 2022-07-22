@@ -9,7 +9,7 @@ echo "[Unit]
 Description=watchdog
 
 [Service]
-ExecStart=sh $path/feed_dog.sh
+ExecStart=/bin/bash $path/feed_dog.sh
 Restart=always
 RestartSec=10s
 TimeoutSec=infinity
