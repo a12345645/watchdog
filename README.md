@@ -2,6 +2,7 @@
 This is a watchdog service for sch311x chip.<br>
 The timer was set for 20 seconds.<br>
 No motion before 20 seconds will reboot.<br>
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/SimpleWatchdogTimer.gif/300px-SimpleWatchdogTimer.gif)
 
 ## Install
 1. Move the folder to a fixed place.
